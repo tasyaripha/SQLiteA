@@ -34,7 +34,7 @@ public class Teman {
         return telpon;
     }
 
-    public void setTelpon() {
-        this.telpon = telpon;
+    public void setTelpon(String telpon) {
+        this.telpon = this.telpon;
     }
 }

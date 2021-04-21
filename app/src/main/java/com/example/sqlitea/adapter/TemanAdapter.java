@@ -1,5 +1,6 @@
 package com.example.sqlitea.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +35,11 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
         nm = listData.get(position).getNama();
         tlp = listData.get(position).getTelpon();
 
+        holder.namaTxt.setTextColor(Color.BLUE);
+        holder.namaTxt.setTextSize(20);
         holder.namaTxt.setText(nm);
         holder.telponTxt.setText(tlp);
+
     }
 
     @Override
@@ -49,8 +53,17 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
         public TemanViewHolder(@NonNull View view) {
             super(view);
             cardku = (CardView) view.findViewById(R.id.kartuku);
-                    namaTxt = (TextView) view.findViewById(R.id.textNama);
-                    telponTxt = (TextView) view.findViewById(R.id.textTelpon);
+            namaTxt = (TextView) view.findViewById(R.id.textNama);
+            telponTxt = (TextView) view.findViewById(R.id.textTelpon);
+
+            cardku.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+                    return true;
+                }
+            });
+
         }
     }
 }

@@ -2,25 +2,31 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_View="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:id="@+id/kartuku">
+    android:id="@+id/kartuku"
+    card_View:cardElevation="3dp"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
     <TextView
         android:id="@+id/textNama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/textTelpon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
         android:text="TextView" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
