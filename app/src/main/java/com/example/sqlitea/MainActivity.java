@@ -29,14 +29,17 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TemanAdapter adapter;
-    private ArrayList<Teman> temanArrayList;
+    private ArrayList<Teman> temanArrayList = new ArrayList<>();
     DBController controller = new DBController(this);
     String id,nm,tlp;
     private FloatingActionButton fab;
 
-    private static String url_insert = "http://10.0.2.2/umyTI/tambahtm.php";
-    private static final String TAG = TambahTeman.class.getSimpleName();
-    private static final String TAG_SUCCES = "success";
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private static String url_insert = "http://10.0.2.2/umyTI/bacateman.php";
+    public static final String TAG_ID       = "id";
+    public static final String TAG_NAMA     = "nama";
+    public static final String TAG_TELPON   = "telpon";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     public void BacaData() {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        JsonArrayRequest jArr = new JsonArrayRequest(url_select, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jArr = new JsonArrayRequest(url_insert, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 Log.d(TAG, response.toString());

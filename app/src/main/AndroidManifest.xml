@@ -12,7 +12,7 @@
         android:theme="@style/Theme.SQLiteA">
         android:usesCleartextTraffic="true">
         <activity android:name=".TemanBaru" />
-        <activity android:name=".TambahTeman"></activity>
+        <activity android:name=".TambahTeman"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
